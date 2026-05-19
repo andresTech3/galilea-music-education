@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { createClient } from '@/lib/supabase/server'
+import { createReadOnlyClient } from '@/lib/supabase/server'
 
 // Simple in-memory rate limiter (for production use Redis/Upstash)
 const rateLimitMap = new Map<string, { count: number; resetTime: number }>()
@@ -48,7 +48,7 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    const supabase = await createClient()
+    const supabase = createReadOnlyClient()
     const { error } = await supabase
       .from('leads')
       .insert([

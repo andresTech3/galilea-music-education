@@ -4,7 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
-import { createClient } from '@/lib/supabase/server'
+import { createReadOnlyClient } from '@/lib/supabase/server'
 
 export const revalidate = 3600 // 1 hour ISR
 
@@ -125,7 +125,7 @@ export default async function CursoPage({ params }: Props) {
   if (!config) notFound()
 
   // Fetch real courses from Supabase
-  const supabase = await createClient()
+  const supabase = createReadOnlyClient()
   const { data: courses } = await supabase
     .from('courses')
     .select('*, teachers(*)')

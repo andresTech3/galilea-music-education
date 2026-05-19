@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server'
-import { createClient } from '@/lib/supabase/server'
+import { createReadOnlyClient } from '@/lib/supabase/server'
 
 export const revalidate = 60 // ISR: revalidate every 60s
 
@@ -10,7 +10,7 @@ export async function GET() {
       return NextResponse.json({ error: 'Configuración de base de datos ausente' }, { status: 500 })
     }
 
-    const supabase = await createClient()
+    const supabase = createReadOnlyClient()
     const { data: courses, error } = await supabase
       .from('courses')
       .select(`
