@@ -49,7 +49,7 @@ export async function POST(request: NextRequest) {
     }
 
     const supabase = await createClient()
-    const { data, error } = await supabase
+    const { error } = await supabase
       .from('leads')
       .insert([
         {
@@ -63,8 +63,6 @@ export async function POST(request: NextRequest) {
           status: 'new',
         },
       ])
-      .select()
-      .single()
 
     if (error) throw error
 
@@ -72,14 +70,17 @@ export async function POST(request: NextRequest) {
       {
         success: true,
         message: '¡Inscripción recibida! Te contactaremos pronto.',
-        id: data.id,
       },
       { status: 201 }
     )
-  } catch (err) {
+  } catch (err: any) {
     console.error('Enroll API error:', err)
     return NextResponse.json(
-      { error: 'Error al procesar la inscripción. Intenta de nuevo.' },
+      { 
+        error: 'Error al procesar la inscripción. Intenta de nuevo.',
+        debugError: err?.message || String(err),
+        debugDetails: err
+      },
       { status: 500 }
     )
   }
