@@ -5,6 +5,11 @@ export const revalidate = 60 // ISR: revalidate every 60s
 
 export async function GET() {
   try {
+    if (!process.env.NEXT_PUBLIC_SUPABASE_URL || !process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY) {
+      console.error('Supabase environment variables are missing!')
+      return NextResponse.json({ error: 'Configuración de base de datos ausente' }, { status: 500 })
+    }
+
     const supabase = await createClient()
     const { data: courses, error } = await supabase
       .from('courses')

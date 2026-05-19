@@ -40,6 +40,14 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Teléfono inválido' }, { status: 400 })
     }
 
+    if (!process.env.NEXT_PUBLIC_SUPABASE_URL || !process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY) {
+      console.error('Supabase environment variables are missing!')
+      return NextResponse.json(
+        { error: 'Error de configuración del servidor. Las credenciales de Supabase no están configuradas.' },
+        { status: 500 }
+      )
+    }
+
     const supabase = await createClient()
     const { data, error } = await supabase
       .from('leads')
