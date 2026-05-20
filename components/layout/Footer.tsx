@@ -4,6 +4,7 @@ const footerLinks = {
   instrumentos: [
     { href: '/cursos/piano', label: 'Clases de Piano' },
     { href: '/cursos/guitarra', label: 'Clases de Guitarra' },
+    { href: '/cursos/bajo', label: 'Clases de Bajo' },
     { href: '/cursos/bateria', label: 'Clases de Batería' },
   ],
   instituto: [

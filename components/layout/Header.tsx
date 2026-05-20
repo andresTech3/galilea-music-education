@@ -8,6 +8,7 @@ const navLinks = [
   { href: '/', label: 'Inicio' },
   { href: '/cursos/piano', label: 'Piano' },
   { href: '/cursos/guitarra', label: 'Guitarra' },
+  { href: '/cursos/bajo', label: 'Bajo' },
   { href: '/cursos/bateria', label: 'Batería' },
   { href: '/nosotros', label: 'Nosotros' },
   { href: '/galeria', label: 'Galería' },

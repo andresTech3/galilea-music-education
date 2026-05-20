@@ -7,6 +7,7 @@ import type { Testimonial } from '@/lib/supabase/types'
 const instrumentEmoji: Record<string, string> = {
   piano: '🎹',
   guitarra: '🎸',
+  bajo: '🎸',
   bateria: '🥁',
 }
 

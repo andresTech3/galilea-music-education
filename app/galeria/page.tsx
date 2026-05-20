@@ -18,9 +18,10 @@ const galleryItems = [
   { id: 4, src: '/images/music-bg.png', alt: 'Estudio de música de Galilea', category: 'general', title: 'Nuestro Estudio' },
   { id: 5, src: '/images/piano-hero.png', alt: 'Recital de piano', category: 'piano', title: 'Recital de Piano' },
   { id: 6, src: '/images/guitar-section.png', alt: 'Recital de guitarra', category: 'guitarra', title: 'Recital de Guitarra' },
+  { id: 7, src: '/images/bass-section.png', alt: 'Clase de bajo eléctrico con el maestro Danco', category: 'bajo', title: 'Clase de Bajo' },
 ]
 
-const categories = ['Todos', 'Piano', 'Guitarra', 'Batería']
+const categories = ['Todos', 'Piano', 'Guitarra', 'Bajo', 'Batería']
 
 export default function GaleriaPage() {
   return (

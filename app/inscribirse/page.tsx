@@ -7,6 +7,7 @@ import Footer from '@/components/layout/Footer'
 const instruments = [
   { value: 'piano', label: '🎹 Piano', teacher: 'Andrés Narváez' },
   { value: 'guitarra', label: '🎸 Guitarra', teacher: 'Danco Padilla' },
+  { value: 'bajo', label: '🎸 Bajo', teacher: 'Danco Padilla' },
   { value: 'bateria', label: '🥁 Batería', teacher: 'José Ricardo' },
 ]
 

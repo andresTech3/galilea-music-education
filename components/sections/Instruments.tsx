@@ -35,6 +35,16 @@ const instruments = [
     level: 'Todos los niveles',
     color: '#ff00aa',
   },
+  {
+    name: 'Bajo',
+    slug: 'bajo',
+    icon: '🎸',
+    teacher: 'Danco Padilla',
+    description: 'El cimiento del ritmo y la armonía. Aprende grooves, técnicas de dedos, púa y slap.',
+    image: '/images/bass-section.png',
+    level: 'Todos los niveles',
+    color: '#ff00aa',
+  },
 ]
 
 function InstrumentCard({ instrument, index }: { instrument: typeof instruments[0]; index: number }) {
@@ -165,7 +175,7 @@ export default function Instruments() {
             className="text-large text-muted anim-reveal"
             style={{ transitionDelay: '0.2s', maxWidth: '560px', margin: '0 auto 64px' }}
           >
-            Tres disciplinas, tres maestros especializados. Aprende a tu ritmo con clases diseñadas para todos los niveles.
+            Cuatro disciplinas, tres maestros especializados. Aprende a tu ritmo con clases diseñadas para todos los niveles.
           </p>
         </div>
 
@@ -203,10 +213,9 @@ export default function Instruments() {
           opacity: 1;
           transform: translateY(0);
         }
-
         .instruments-grid {
           display: grid;
-          grid-template-columns: repeat(3, 1fr);
+          grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
           gap: var(--space-6);
         }
 

@@ -91,6 +91,29 @@ const instrumentsConfig: Record<string, InstrumentConfig> = {
       { name: 'Intermedio', badge: 'intermediate', desc: 'Fills complejos, variaciones rítmicas y estilos múltiples.' },
     ],
   },
+  bajo: {
+    name: 'Bajo',
+    slug: 'bajo',
+    icon: '🎸',
+    image: '/images/bass-section.png',
+    teacher: 'Danco Padilla',
+    teacherBio: 'Guitarrista y bajista profesional con 5+ años formando músicos. Especialista en cuerdas pulsadas.',
+    teacherSpecialty: 'Guitarra, Bajo Eléctrico, Fingerpicking',
+    description:
+      'El bajo eléctrico es la columna vertebral de la música moderna, fusionando el ritmo y la armonía. Aprende a crear líneas sólidas, dominar técnicas de dedos, púa y slap, y a conectarte a la perfección con la batería.',
+    benefits: [
+      'Control del tempo y ritmo preciso',
+      'Técnicas de pulsación (dedos, púa, slap y pop)',
+      'Escalas, arpegios y teoría armónica aplicada',
+      'Creación de líneas de bajo creativas',
+      'Entrenamiento auditivo rítmico',
+      'Ensamble y sincronía con la batería',
+    ],
+    levels: [
+      { name: 'Principiante', badge: 'beginner', desc: 'Postura, digitación, escalas básicas y tus primeras líneas de bajo.' },
+      { name: 'Intermedio', badge: 'intermediate', desc: 'Slap y pop básico, improvisación, armonía y ensamble rítmico avanzado.' },
+    ],
+  },
 }
 
 const schedules = [
@@ -116,7 +139,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export async function generateStaticParams() {
-  return [{ slug: 'piano' }, { slug: 'guitarra' }, { slug: 'bateria' }]
+  return [{ slug: 'piano' }, { slug: 'guitarra' }, { slug: 'bateria' }, { slug: 'bajo' }]
 }
 
 export default async function CursoPage({ params }: Props) {
