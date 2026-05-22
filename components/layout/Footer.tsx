@@ -12,6 +12,7 @@ const footerLinks = {
     { href: '/galeria', label: 'Galería' },
     { href: '/inscribirse', label: 'Inscribirse' },
     { href: '/contacto', label: 'Contacto' },
+    { href: '/admin', label: 'Administración' },
   ],
 }
 
